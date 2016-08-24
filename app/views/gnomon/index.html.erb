@@ -1,0 +1,52 @@
+<h1>Hello. This is the abyss.</h1>
+
+<style>
+  body {
+    background: black;
+    color: limegreen;
+    font-family: monospace;
+  }
+
+  body a {
+    color: limegreen;
+  }
+  .glitch {
+    position: relative;
+    color: hotpink;
+    background: black;
+  }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .glitch::before {
+    left: 1px;
+    text-shadow: -1px 0 red;
+    color: yellow;
+    clip: rect(1px);
+  }
+  .glitch::after {
+    left: -1px;
+    text-shadow: -1px 0 blue;
+    color: maroon;
+    clip: rect(1px);
+  }
+</style>
+
+<% rand(300).times do %>
+  <% newline = rand > 0.9 %>
+  <% if newline %>
+    <p>
+  <% end %>
+    <% glitch = ['glitch', ''].sample %>
+    <% word_set = word %>
+    <%= (link_to word_set, next_action, class: glitch, data: {text: word_set}) %>
+  <% if newline %>
+    </p>
+  <% end %>
+<% end %>
