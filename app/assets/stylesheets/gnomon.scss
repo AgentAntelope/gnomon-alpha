@@ -1,3 +1,65 @@
 // Place all the styles related to the gnomon controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: black;
+  color: limegreen;
+  font-family: monospace;
+  h1 {
+    text-align: center;
+  }
+}
+
+body a {
+  color: limegreen;
+}
+
+.glitch {
+  position: relative;
+  color: hotpink;
+  background: black;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 1px;
+}
+
+.one::before {
+  text-shadow: -1px 0 red;
+  color: yellow;
+}
+.two::before {
+  text-shadow: -1px 0 blue;
+  color: green;
+}
+.three::before {
+  text-shadow: -1px 0 orange;
+  color: purple;
+}
+
+.glitch::after {
+  left: -1px;
+}
+.one::after {
+  text-shadow: -1px 0 blue;
+  color: green;
+}
+.two::after {
+  text-shadow: -1px 0 orange;
+  color: purple;
+}
+.three::after {
+  text-shadow: -1px 0 red;
+  color: yellow;
+}
