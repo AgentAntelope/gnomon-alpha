@@ -4,12 +4,11 @@
   <% end %>
 </h1>
 
-<% rand(300).times do %>
-  <% newline = rand > 0.9 %>
+<% rand(600).times do %>
+  <% newline = rand > 0.95 %>
   <% if newline %>
     <p>
   <% end %>
-    <% glitch = ['glitch', ''].sample %>
     <% word = generate_word %>
     <%= (link_to word, next_action, class: "glitch #{glitch_class}", data: {text: word}) %>
   <% if newline %>
