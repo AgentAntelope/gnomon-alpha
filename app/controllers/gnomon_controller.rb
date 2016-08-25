@@ -5020,22 +5020,38 @@ class GnomonController < ApplicationController
 
   def one
     @variant = 1
-    render :index
+    if ([params[:first]] - WORDS).any?
+      render :wrong
+    else
+      render :index
+    end
   end
 
   def two
     @variant = 2
-    render :index
+    if ([params[:first], params[:second]] - WORDS).any?
+      render :wrong
+    else
+      render :index
+    end
   end
 
   def three
     @variant = 3
-    render :index
+    if ([params[:first], params[:second], params[:third]] - WORDS).any?
+      render :wrong
+    else
+      render :index
+    end
   end
 
   def four
     @variant = 4
-    render :index
+    if ([params[:first], params[:second], params[:third], params[:fourth]] - WORDS).any?
+      render :wrong
+    else
+      render :index
+    end
   end
 
   private
