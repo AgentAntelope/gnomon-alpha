@@ -7,7 +7,9 @@
 <% rand(800).times do %>
   <% newline = rand > 0.95 %>
   <% if newline %>
-    <p>
+    <p
+    class = <%= %w[left right].sample %>
+    >
   <% end %>
     <% word = generate_word %>
     <%= (link_to word, next_action, class: "glitch #{glitch_class}", data: {text: word}) %>
