@@ -4,6 +4,26 @@
   <% end %>
 </h1>
 
+<% if @variant == 4 %>
+  <form action="/" method="get">
+    <label class='ask'>
+      ASK : <%= text_area_tag('ASK') %>
+    </label>
+    <label class='tell'>
+      TELL: <%= text_area_tag('TELL') %>
+    </label>
+    <div class='buttonholder'>
+      <button>
+        SUBMIT TO GNOMON
+      </button>
+    </div>
+    <p>
+      &nbsp;
+    <p/>
+  </form>
+<% end %>
+
+
 <% rand(600).times do %>
   <% newline = rand > 0.95 %>
   <% if newline %>

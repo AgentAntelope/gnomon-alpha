@@ -5018,6 +5018,26 @@ class GnomonController < ApplicationController
   def wrong
   end
 
+  def one
+    @variant = 1
+    render :index
+  end
+
+  def two
+    @variant = 2
+    render :index
+  end
+
+  def three
+    @variant = 3
+    render :index
+  end
+
+  def four
+    @variant = 4
+    render :index
+  end
+
   private
 
   def generate_word

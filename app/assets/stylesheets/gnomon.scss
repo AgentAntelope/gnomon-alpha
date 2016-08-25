@@ -11,8 +11,38 @@ body {
   }
 }
 
+.ask {
+  float: left;
+}
+
+.tell {
+  float: right;
+}
+
 body a {
   color: limegreen;
+}
+
+label {
+  font-size: 50px
+}
+
+.buttonholder {
+  clear: both;
+  text-align: center;
+}
+
+button {
+  font-size: 100px;
+}
+
+textarea {
+  height:200px;
+  font-size:50px;
+}
+
+p {
+  clear: both;
 }
 
 .glitch {
