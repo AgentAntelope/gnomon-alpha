@@ -4982,7 +4982,40 @@ class GnomonController < ApplicationController
     zodiac
   ].freeze
 
+  LEAVE_WORDS =
+  %w[
+    ABANDON
+    ABSCOND
+    AVOID
+    BOLT
+    BREAK
+    DECAMP
+    DENIAL
+    DEPART
+    DESERT
+    DISAGREEMENT
+    DISAPPROVAL
+    ELUDE
+    EVADE
+    FLY
+    IMPRISONMENT
+    INCARCERATION
+    LEAVE
+    LIMITATION
+    PROHIBITION
+    PROTEST
+    REFUSAL
+    RESTRAINT
+    RESTRICTION
+    RETREAT
+    VANISH
+    VETO
+  ]
+
   def index
+  end
+
+  def wrong
   end
 
   private
@@ -4991,6 +5024,11 @@ class GnomonController < ApplicationController
     WORDS.sample
   end
   helper_method :generate_word
+
+  def generate_leave_word
+    LEAVE_WORDS.sample
+  end
+  helper_method :generate_leave_word
 
   def glitch_class
     %w[

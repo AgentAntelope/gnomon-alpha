@@ -1,0 +1,17 @@
+<h1>
+  <p> GET OUT GET OUT GET </p>
+  <p> GET OUT GET OUT GET OUT GET </p>
+  <p> GET OUT GET OUT GET </p>
+</h1>
+
+<% rand(600).times do %>
+  <% newline = rand > 0.95 %>
+  <% if newline %>
+    <p>
+  <% end %>
+  <% word = generate_leave_word %>
+  <%= (link_to word, next_action, class: "glitch #{glitch_class}", data: {text: word}) %>
+  <% if newline %>
+    </p>
+  <% end %>
+<% end %>
