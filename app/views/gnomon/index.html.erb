@@ -4,21 +4,7 @@
   <% end %>
 </h1>
 
-<p>
-<% rand(800).times do %>
-  <% newline = rand > 0.95 %>
-  <% if newline %>
-    </p>
-  <% end %>
-    <% word = generate_word %>
-    <%= (link_to word, next_action, class: "glitch #{glitch_class}", data: {text: word}) %>
-  <% if newline %>
-    <p
-    class = <%= %w[left right].sample %>
-    >
-  <% end %>
-<% end %>
-</p>
+<%= render 'words', word_generator: method(:generate_word) %>
 
 <% if @variant == 4 %>
   <form action="/" method="get">
