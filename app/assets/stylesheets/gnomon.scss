@@ -59,6 +59,18 @@ p {
   background: black;
 }
 
+.small {
+  font-size: 10px
+}
+
+.medium {
+  font-size: 14px
+}
+
+.large {
+  font-size: 18px
+}
+
 .glitch::before,
 .glitch::after {
   content: attr(data-text);

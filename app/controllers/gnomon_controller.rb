@@ -5116,6 +5116,15 @@ class GnomonController < ApplicationController
   end
   helper_method :glitch_class
 
+  def size_class
+    %w[
+      small
+      medium
+      large
+    ].sample
+  end
+  helper_method :size_class
+
   def next_action
     [
       one_path(first: generate_word),
