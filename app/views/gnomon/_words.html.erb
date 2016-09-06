@@ -4,12 +4,10 @@
   <% if newline %>
     </p>
   <% end %>
-    <% word = word_generator.call %>
+    <% word =  (@word_generator || word_generator).call %>
     <%= (link_to word, next_action, class: "glitch #{glitch_class}", data: {text: word}) %>
   <% if newline %>
-    <p
-    class = <%= %w[left right].sample %>
-    >
+    <p class = <%= %w[left right].sample %> >
   <% end %>
 <% end %>
 </p>

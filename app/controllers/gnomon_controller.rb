@@ -5012,7 +5012,47 @@ class GnomonController < ApplicationController
     VETO
   ]
 
+  THANKFUL_WORDS = %w[
+    ABSORBED
+    BEHOLDEN
+    CAUGHT
+    COLLECTED
+    CONTROLLED
+    DRAWN
+    ENGROSSED
+    ENTICED
+    EXCLUSIVE
+    GRATEFUL
+    GRATIFIED
+    HELD
+    HOOKED
+    INDEBTED
+    LURED
+    OBSESSED
+    OPEN
+    OWNED
+    PICKED
+    PLEASED
+    REQUISITION
+    RESTRICTED
+    RETAINED
+    SEIZED
+    SOLD
+    TAKEN
+    THANKFUL
+    VINDICATED
+  ]
+
   def index
+    if params[:ASK].present? && params[:TELL].present?
+      render :wrong
+    elsif params[:ASK].present?
+      @reply = Gnomon.answer(params[:ASK])
+    elsif params[:TELL].present?
+      @word_generator = lambda { THANKFUL_WORDS.sample }
+    else
+      render :wrong
+    end
   end
 
   def wrong

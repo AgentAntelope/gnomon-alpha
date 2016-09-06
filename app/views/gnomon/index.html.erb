@@ -2,6 +2,8 @@
   <% @hipku.each do |line| %>
     <p><%= line.gsub(/\A./) {|m| m.upcase} %></p>
   <% end %>
+  </br>
+  <p><%= @reply %></p>
 </h1>
 
 <%= render 'words', word_generator: method(:generate_word) %>
